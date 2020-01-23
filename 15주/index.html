@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  기존 비밀번호 : <input id="prePassword"/>
+  새로운 비밀번호 : <input id="setPassword"/>
+  <button onclick=setPassword()>비밀번호 변경</button>
+
+</body>
+<script>
+  let globalFunc;
+  let idontknowPassword;
+
+  {
+    let password = "1234";
+    let phoneNumber = "01049931290";
+
+    globalFunc = function(prevent_password, set_password) {
+      if(user_pwd === password) {
+        password = set_password;
+        alert(`비밀번호가 ${password} 변경되었습니다.`)
+      } else {
+        alert(`비밀번호가 올바르지 않습니다`)
+      }
+    } 
+
+    idontknowPassword = function(phone, set_password) {
+      if(phoneNumber === phone) {
+        password = set_password;
+        alert(`비밀번호가 ${password} 변경되었습니다.`)
+      }
+    }
+  }
+
+  function setPassword() {
+    let prePassword = document.getElementById("prePassword").value;
+    let setPassword = document.getElementById("setPassword").value;
+    globalFunc(prePassword, setPassword);
+  }
+</script>
+</html>

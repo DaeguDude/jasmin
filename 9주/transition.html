@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      color: white;
+      background: red;
+      margin-bottom: 10px;
+      transition-property: width, opacity;
+    }
+
+    div:first-child {
+      transition-duration: 0.5s;
+    }
+    div:nth-child(2) {
+      transition-duration: 2s;
+    }
+    div:last-child {
+      transition-duration: 5s;
+    }
+
+    div:hover {
+      width: 300px;
+      opacity: 0.5;
+    }
+  
+  </style>
+</head>
+<body>
+  <div>0.5s</div>
+  <div>2s</div>
+  <div>5s</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!-- Grid layout 
+
+    float -> grid -> flex 오래된 explore는 지원을 안 할 수 있음.(올드한 순으로)
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .header{
+            /* grid-row-start: 1;
+            grid-row-end: 5; */
+            background-color: coral;
+            grid-area: header;
+        }
+        .navi{
+            /* grid-column-start: 2;
+            grid-column-end: 4; */
+            background-color: black;
+            grid-area: navi;
+        }
+        .main{
+            /* grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 4; */
+            grid-area: main;
+            background-color: blue;
+        }
+        .aside{
+            background-color: darkgreen;
+            grid-area: aside;
+        }
+        .footer{
+            background-color: darkmagenta;
+            grid-area: footer;
+        }
+        /* .fourth{
+            background-color: blueviolet;
+        }
+        .fifth{
+            background-color: red;
+        }
+        .sixth{
+            background-color: darkgreen;
+        } */
+        /* .seventh{
+            grid-column-start: 2;
+            grid-column-end: 4;
+            background-color: darkgray;
+        } */
+        /* .eighth{
+            background-color: darkblue;
+        }
+        .nineth{
+            background-color: darkcyan;
+        } */
+        .wrapper{
+            color: white;
+            display: grid;
+            grid-template-columns: 100px 100px 100px 100px; 
+            grid-template-rows: 100px 100px 100px 100px;
+            grid-template-areas: 
+                "header header header header "
+                "navi main main aside"
+                "navi main main aside"
+                "footer footer footer footer"
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">1</div>
+        <div class="navi">2</div>
+        <div class="main">3</div>
+        <div class="aside">4</div>
+        <div class="footer">5</div>
+        <!-- <div class="fourth">4</div>
+        <div class="fifth">5</div>
+        <div class="sixth">6</div> -->
+        <!-- <div class="seventh">7</div> -->
+        <!-- <div class="eighth">8</div> -->
+        <!-- <div class="nineth">9</div> -->
+    </div>
+</body>
+</html>

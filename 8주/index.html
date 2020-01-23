@@ -1,0 +1,117 @@
+<!-- 오늘은 2019/11/07일 입니다 -->
+<!-- Flex안에 Grid를 넣어보는 것 추천 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+  .container {
+      display: flex;
+      flex-direction: column;
+  }
+
+  header {
+      border-bottom: 1px solid black;
+      padding: 20px;
+      text-align: center;
+      font-size: 30px;
+  }
+
+  footer {
+      border-top: 1px solid black;
+      padding: 20px;
+      text-align: center;
+      font-size: 30px;
+  }
+
+  .content {
+      display: flex;
+      flex-direction: row;
+  }
+
+  .content nav {
+      border-right: 1px solid black;
+  }
+  .content aside {
+      border-left: 1px solid black;
+  }
+
+  .content nav, .content aside {
+      flex-basis: auto;
+      flex-grow: 1;
+  }
+
+  .content main {
+      flex-grow: 2;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+  }
+
+  .section1, .section2 {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      border: 1px solid black;
+      align-items: center;
+  }
+
+  .section1 div, .section2 div {
+    box-sizing: border-box;
+    margin: 20px;
+    border: 1px solid black;
+    width: 300px;
+    flex-basis: 300px;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media all and (max-width: 800px) {
+      aside, nav {
+          display: none;
+      }
+
+      .section1 div, .section2 div {
+          width: 200px;
+          flex-basis: 300px;
+      }
+  }
+ 
+</style>
+</head>
+<body>
+    <div class="container">
+    <header> <b>layout</b> </header>
+    <section class="content">
+        <nav>
+            <ul>
+                <li>html</li>
+                <li>css</li>
+                <li>java</li>
+            </ul>
+        </nav>
+        <main>
+            <div class="section1">
+                <div>인기게시판</div>
+                <div>최신게시판</div>
+            </div>
+
+            <div class="section2">
+                <div>사진게시판</div>
+                <div>익명게시판</div>
+            </div>
+        </main>
+        <aside>
+            AD
+        </aside>
+    </section>
+    
+    <footer>여기 푸터입니다.</footer>
+    </div> <!-- container -->
+</body>
+</html>
+

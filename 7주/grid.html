@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       header{
+           border: 1px solid black;
+           font-size: 20px;
+           text-align: center;
+       }
+       .content{
+            display: grid;
+            /* 1fr을 4번 반복함 */
+            grid-template-columns: repeat(4,1fr);
+            grid-auto-rows: 100px;
+       }
+       nav{
+           border: 1px solid black;
+       }
+       main{
+           border: 1px solid black;
+       }
+       aside{
+           border: 1px solid black;
+       }
+       footer{
+           border: 1px solid black;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>자스민</h1>
+        </header>
+    
+        <section class="content">
+            <nav>
+                <ul>
+                    <li>asd</li>
+                    <li>qwe</li>
+                    <li>zxc</li>
+                </ul>
+            </nav>
+            <main>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eaque officia voluptates odit atque eligendi vero optio architecto, veniam amet accusantium. Dolorum maiores provident iusto asperiores deleniti quo veritatis. Veniam?
+            </main>
+            <aside>
+                AD
+            </aside>
+           
+        </section>
+        <footer>
+                &copy; asdfsdfsad
+        </footer>
+    
+    </div>
+</body>
+</html>

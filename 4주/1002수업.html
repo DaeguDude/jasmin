@@ -1,0 +1,68 @@
+<!--
+    git add 파일이름
+    git commit -m "니가 적고 싶은거"
+    git push origin master
+
+    (cmd + /) comments out
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        
+        #lee{
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            /* box sizing을 넣지 않을시 padding을 더하면, 크기가 바뀐다.*/
+            box-sizing: border-box;
+            margin: 100px;
+        }
+
+        #lee:hover{
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+        }
+
+        a{
+            color:black;
+        }
+
+        a:visited{
+            color:red;
+        }
+
+        #lv{
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;     
+        }
+
+        #check:checked + span{
+            color: blue;
+        }
+
+        span::first-letter{
+            color:yellow;
+        }
+    </style>
+</head>
+<body>
+    <a href="#top">맨위로</a>
+    <div id="lee">
+        dsaffa
+    </div>
+    <div id="lv">
+
+    </div>
+    <input id="check" type="checkBox"><span>sdfdsf</span>
+</body>
+</html>

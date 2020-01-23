@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var objectLiteral = {};
+    var objectConstructor = new Object();
+
+    function Person() {
+    }
+
+    Person.prototype.hand = 2;
+    Person.prototype.body = 1;
+    Person.prototype.nose = 1;
+
+    var kim = new Person();
+    var lee = new Person();
+    console.log(kim);
+    console.log(lee);
+    console.log(kim.hand);
+    console.log(lee.hand);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

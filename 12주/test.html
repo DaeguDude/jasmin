@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+ .flex_container {
+   display: flex;
+   flex-direction: row;
+ }
+</style>
+<body>
+  <div class="flex_container">
+    <div id="root" class="big_div">
+
+    </div>
+    <div id="root" class="big_div">
+
+    </div>
+    <div id="root" class="big_div">
+
+    </div>
+  </div> <!-- flex_container -->
+</body>
+<script>
+  let root = document.getElementById("root");
+  const picture1 = "https://i.pinimg.com/474x/45/65/5c/45655c4a894330462d36980afc225109.jpg";
+  const picture2 = "https://i.pinimg.com/474x/fe/f2/a3/fef2a399d6fd3ff5feb9bc595d2116c9.jpg";
+  const picture3 = "https://i.pinimg.com/474x/59/6b/f4/596bf4e5b5bff08dc1fc10b2b81e1287.jpg";
+ 
+  for(let i = 0; i < 10; i++) {
+    root.innerHTML += `<img
+  }
+</script>
+</html>

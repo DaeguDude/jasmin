@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: red;
+      animation-name: pen, fadeout, change;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-direction: reverse;
+    }
+    @keyframes pen{
+      from{Left: 0;}
+      to{Left:300px;}
+    }
+    @keyframes fadeout {
+      from{opacity: 1}
+      to{opacity: 0.4}
+    }
+    @keyframes change {
+      from{background:aquamarine};
+      to{background: red;}
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>
