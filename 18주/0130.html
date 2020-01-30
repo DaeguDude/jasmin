@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .moreSmall {
+      width: 50px;
+      height: 50px;
+      background-color: red;
+    }
+    .small {
+      width: 50px;
+      height: 50px;
+      background-color: blue;
+    }
+    .black {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+    }
+
+    .aqua {
+      width: 100px;
+      height: 100px;
+      background: aqua;
+    }
+
+    .square {
+      width: 100px;
+      height: 100px;
+    }
+
+    .sameClass {
+      background-color: red;
+    }
+
+    .color-red {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="second">
+
+  </div>
+  
+  
+  <button onclick=createDiv()>
+    생성하기
+  </button>
+  <input id="password_1" onkeyup=validPassword()>
+  <input id="password_2" onkeyup=validPassword()>
+  <div id="passwordStatus"></div>
+  
+</body>
+<script>
+  // 어떤 요소를 클릭하거나 키보드를 입력하여 특정함수를 실행 시키는 것을 이벤트라 한다.
+  let i = 0;
+  function createDiv() {
+    const secondDiv = document.getElementById('second');
+    const newDiv = document.createElement('div');
+    newDiv.classList.add('square');
+    newDiv.classList.add('black');
+    newDiv.textContent = i++;
+
+    
+    newDiv.addEventListener('click', (e)=>{
+      // e.target은 이벤트가 발생한 노드를 말함
+      // secondDiv.removeChild(e.target)
+      e.target.classList.add('color-red')
+    })
+    
+    secondDiv.appendChild(newDiv);
+  }
+
+  function validPassword() {
+    const password_1 = document.getElementById('password_1');
+    const password_2 = document.getElementById('password_2');
+    const passwordStatus = document.getElementById('passwordStatus');
+
+    const value_1 = password_1.value;
+    const value_2 = password_2.value;
+
+    if(value_1 === value_2) {
+      passwordStatus.textContent = "비밀번호가 일치합니다.";
+    } else {
+      passwordStatus.textContent = "비밀번호가 불일치합니다.";
+    }
+  }
+
+</script>
+</html>
