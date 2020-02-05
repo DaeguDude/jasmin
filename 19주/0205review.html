@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .square {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+        }
+
+        .dark {
+            color: white;
+            background-color: black;
+        }
+
+        .white {
+            color: black;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="divOne" class="black" onclick=helloworld()>
+        It's div1
+    </div>
+    <div id="divTwo" class="black" onclick="">
+        It's div2
+        <div id="divTwoChild">
+            child div
+        </div>
+    </div>
+    <input id="password" name="text"/>
+    <input id="passwordValid" name="text"/>
+    <a id="move" href="http://naver.com">이동</a>
+    <div id="articleBox" class="square">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus aut in omnis officiis illo deserunt, placeat voluptatibus? Optio vitae numquam, neque praesentium voluptatum, quo totam fugiat veniam delectus non ullam.
+    </div>
+    <button id="colorChange">Click!</button>
+    <input id="scheduleText" placeholder="스케쥴을 작성해주세요.">
+    <input id="addButton" type="button" value="스케쥴 추가">
+    <ul id="schedule">
+
+    </ul>
+</body>
+<script>
+
+    const password = document.getElementById("password");
+    const passwordValid = document.getElementById("passwordValid");
+    const aTag = document.getElementById("move");
+    let passwordChecker = false;
+
+    password.addEventListener("keyup", ()=> {
+        if(password.value === passwordValid.value) {
+            console.log("일치합니다.");
+        } else {
+            console.log("불일치합니다.");
+        }
+    })
+
+    passwordValid.addEventListener("keyup", ()=> {
+        if(password.value === passwordValid.value) {
+            console.log("일치합니다.");
+            passwordChecker = true;
+        } else {
+            console.log("불일치합니다.");
+        }
+    })
+
+    aTag.addEventListener("click", (event)=> {
+        event.preventDefault();
+        if(passwordChecker === true) {
+            window.location.href = "http://www.naver.com"
+        }
+    })
+
+    const articleBox = document.getElementById("articleBox");
+    const colorChange = document.getElementById("colorChange")
+    let darkMode = false;
+    colorChange.addEventListener("click", (event)=> {
+        if(darkMode === false) {
+            articleBox.classList.add("dark");
+            console.log(articleBox.classList);
+            articleBox.classList.remove("white");
+            darkMode = true;
+            event.target.textContent = "White mode";
+        } else {
+            articleBox.classList.add("white");
+            articleBox.classList.remove("dark");
+            darkMode = false;
+            event.target.textContent = "Dark mode";
+        }
+    })
+
+    articleBox.textContent = "<button>버튼</button>";
+    // createElement(tag_to_create)
+    const schedule = document.getElementById("schedule");
+    const addButton = document.getElementById("addButton");
+    addButton.addEventListener("click", () => {
+        const input = document.getElementById("scheduleText");
+        const newLi = document.createElement("li");
+        const textValue = input.value;
+        input.value = "";
+        newLi.textContent = textValue;
+
+        newLi.addEventListener('click', (event)=> {
+            console.log(event);
+            console.log(`event.target: ${event.target}`);
+            console.log(`event.textContent: ${event.target.textContent}`)
+            event.target.style = "color: red";
+        })
+        schedule.appendChild(newLi);
+    })
+
+</script>
+</html>
