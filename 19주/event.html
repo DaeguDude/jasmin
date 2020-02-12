@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="text-box">
+  <button id="add-button">추가</button>
+  <ul id="list">
+
+  </ul>
+</body>
+<script>
+  const userText = document.getElementById('text-box');
+  const addButton = document.getElementById('add-button');
+  const list = document.getElementById('list');
+
+  addButton.addEventListener('click', (e) => {
+    let userTextValue = userText.value;
+    // 칸 지우기
+    userText.value = '';
+    
+    // 체크박스 만들고, 타입 체크박스 지정
+    const input = document.createElement('input')
+    input.setAttribute('type', 'checkbox')
+    
+    // li만들고, input li에 넣고 그 li에 텍스트 집어넣음
+    let newLi = document.createElement('li');
+    newLi.appendChild(input);
+    const newLabel = document.createElement('label');
+    newLabel.textContent = userTextValue;
+    newLi.appendChild(newLabel);
+    
+    // ul에 li를 넣음.
+    list.appendChild(newLi);
+
+  })
+
+  // 클릭시 line-through
+  list.addEventListener('click', (e) => {
+    console.log(e.target.parentNode)// 현재 클릭된 태그전체 반환
+    console.log(e.target.parentNode.children[1]);
+    e.target.parentNode.children[1].style = "text-decoration: line-through";
+
+
+  })
+
+</script>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #headAdBar {
+      min-width: 1000px;
+      height: 50px;
+      background-color: #0a1425;
+    }
+
+    #areaFlex {
+      
+      width: 60%;
+      margin: 0 auto;
+      height: 100%;
+    }
+
+    body {
+      padding: 0;
+    }
+
+    #whaleLink {
+      position: relative;
+      display: inline-block;
+      height: 50px;
+      width: 1000px;
+      text-align: center;
+      line-height: 50px;
+      text-decoration: none;
+      color: white;
+      background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsatOu1oSUhr097DdEjpeiEnc8xu__7xWA-QjWl9UVjmQwyXPmrA&s);
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: "Apple SD Gothic Neo","맑은고딕","Malgun Gothic";
+    }
+
+    #button {
+      width: 70px;
+      background-color: #82dbbe;
+      border: none;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 10px;
+      cursor: pointer;
+      float: right;
+      margin: 10px 0;
+      border-radius: 5px;
+    }
+
+    bm {
+      font-weight: bold;
+      color: #00d2b3;
+    }
+
+    #icoWhale {
+      position: absolute;
+      top: 9px;
+      left: 320px;
+      width: 29px;
+      height: 30px;
+      background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_main_v191212.png);
+      background-position: -143px -60px;
+      float: right;
+    }
+    #adTextDiv{
+      display: inline-block;
+      margin-left: 250px;
+    }
+  </style>
+</head>
+<body>
+  <div id="headAdBar">
+    <div id="areaFlex">
+      <a id="whaleLink" href="http://www.naver.com">
+        <span id="icoWhale"></span>
+        <div id="adTextDiv">
+          <bm>
+            인터넷의 새로운 시작 !
+          </bm>
+        </div>
+        <button id="button">
+          다운로드
+        </button>
+      </a>
+    </div>
+  </div>
+</body>
+<script>
+
+
+  const button = document.getElementById("button");
+  button.addEventListener('click', (e) => {
+    let aTag = document.getElementById("whaleLink");
+    // e.stopPropagation();
+    alert("다운로드 중");
+    aTag.href = "";
+  })
+
+</script>
+</html>

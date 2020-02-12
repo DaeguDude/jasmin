@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #root {
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+    }
+
+    #first {
+      width: 200px;
+      height: 200px;
+      border: 1px solid aqua;
+    }
+
+    #second {
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="first">
+      <div id="second">
+
+      </div>
+    </div>
+  </div>
+
+  <form action="http://www.naver.com/login" method="GET">
+    <input type="text" placeholder="id" id="idBox">
+    <input type="password" placeholder="pw" id="pwBox">
+    <input type="submit" id="submitButton" value="로그인">
+  </form>
+
+  <h1>오늘의 할 일</h1>
+  <ul id="itemList">
+    <li>
+      <input type="checkbox" id="item1" value="item1">
+      <label for="item1">이벤트 버블링</label>
+    </li>
+    <li>
+      <input type="checkbox" id="item2" value="item2">
+      <label for="item2">이벤트 캡쳐 학습</label>
+    </li>
+  </ul>
+</body>
+<script>
+  // 이벤트 버블링(하위요소의 이벤트가 상위요소의 이벤트까지 발생시킴)
+  // const divs = document.querySelectorAll('div');
+  // divs.forEach( div => {
+  //   div.addEventListener('click', (event) => {
+  //     alert(event.currentTarget.id)
+  //   })
+  // });
+
+  // 이벤트 캡쳐링(상위요소의 이벤트가 하위요소의 이벤트까지 발생시킴)
+  // const divs = document.querySelectorAll('div');
+  // divs.forEach( div => {
+  //   div.addEventListener('click', (event) => {
+  //     event.stopPropagation();
+  //     alert(event.currentTarget.id);
+  //   }, {
+  //     capture : true
+  //   })
+  // });
+
+  const submit = document.getElementById("submitButton");
+  submit.addEventListener('click', (event) => {
+    const idValue = document.getElementById('idBox').value;
+    const pwValue = document.getElementById('pwBox').value;
+
+    if(idValue.length < 5) {
+      alert("id는 5글자 이상입니다")
+      event.preventDefault();
+    } else if(pwValue.length < 5) {
+      alert("password는 5글자 이상입니다.");
+      event.preventDefault();
+    }
+  })
+  
+  const itemList = document.getElementById('itemList');
+  // const inputs = document.querySelectorAll('li input');
+  // inputs.forEach( input => {
+  //   input.addEventListener('click', (event) => {
+  //     alert(event.target.value);
+  //   })
+  // })
+  itemList.addEventListener('click', (event) => {
+    // alert('clicked');
+    console.log(event.target.value)
+  })
+
+  const newLi = document.createElement('li');
+  const input = document.createElement('input');
+  const label = document.createElement('label');
+  const labelText = document.createTextNode('이벤트 위임 학습')
+
+  input.setAttribute('type', 'checkbox');
+  input.setAttribute('id', 'item3')
+  input.setAttribute('value', 'item3');
+  label.setAttribute('for', 'item3');
+  label.appendChild(labelText);
+  newLi.appendChild(input);
+  newLi.appendChild(label);
+  itemList.appendChild(newLi);
+
+</script>
+</html>
